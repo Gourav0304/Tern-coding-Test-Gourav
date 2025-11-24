@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Youtube, Sparkles } from 'lucide-react';
 
-export default function VideoPlayerForm({ onSave, isLoading }) {
-  const [videoUrl, setVideoUrl] = useState('');
+interface VideoPlayerFormProps {
+  onSave: (url: string) => void;
+}
+
+export default function VideoPlayerForm({ onSave }: VideoPlayerFormProps) {
+  const [videoUrl, setVideoUrl] = useState(''); 
   const [error, setError] = useState('');
 
-  const validateYoutubeUrl = (url) => {
+  const validateYoutubeUrl = (url: string) => {
     const patterns = [
       /^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
       /^(https?:\/\/)?(www\.)?youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/,
@@ -13,7 +17,7 @@ export default function VideoPlayerForm({ onSave, isLoading }) {
     return patterns.some((pattern) => pattern.test(url));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
 
@@ -84,19 +88,11 @@ export default function VideoPlayerForm({ onSave, isLoading }) {
 
             <button
               type="submit"
-              disabled={isLoading}
               className="w-full h-12 bg-gradient-to-r from-purple-600 to-blue-600 
               hover:from-purple-700 hover:to-blue-700 text-white font-medium 
               shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
             >
-              {isLoading ? (
-                <span className="flex items-center gap-2 justify-center">
-                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  Saving...
-                </span>
-              ) : (
-                'Save Video'
-              )}
+              Save Video
             </button>
           </form>
         </div>
