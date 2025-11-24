@@ -9,7 +9,6 @@ export default function Video() {
   const [videoUrl, setVideoUrl] = useState(parsed?.url || null);
   const [startTime, setStartTime] = useState(0);
 
-  // Compute elapsed time
   useEffect(() => {
     if (!parsed?.savedAt) return;
 

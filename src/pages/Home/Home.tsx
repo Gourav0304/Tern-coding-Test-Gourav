@@ -5,7 +5,11 @@ export default function Home() {
   const navigate = useNavigate();
 
   const handleSave = (videoUrl: string) => {
-    localStorage.setItem('videoUrl', videoUrl);
+    const saveData = {
+      url: videoUrl,
+      savedAt: Date.now(),
+    };
+    localStorage.setItem('videoData', JSON.stringify(saveData));
     navigate('/video');
   };
 

@@ -6,7 +6,7 @@ interface VideoPlayerFormProps {
 }
 
 export default function VideoPlayerForm({ onSave }: VideoPlayerFormProps) {
-  const [videoUrl, setVideoUrl] = useState(''); 
+  const [videoUrl, setVideoUrl] = useState('');
   const [error, setError] = useState('');
 
   const validateYoutubeUrl = (url: string) => {
