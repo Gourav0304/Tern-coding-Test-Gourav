@@ -13,11 +13,5 @@ export default function Home() {
     navigate('/video');
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/30 flex items-center justify-center p-6">
-      <div className="relative z-10 w-full">
-        <VideoPlayerForm onSave={handleSave} />
-      </div>
-    </div>
-  );
+  return <VideoPlayerForm onSave={handleSave} />;
 }
