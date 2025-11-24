@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Edit } from 'lucide-react';
+import { validateYoutubeUrl } from '../../utils/validateYoutubeUrl';
 
 const VideoPlayer = ({
   videoUrl,
@@ -10,6 +11,7 @@ const VideoPlayer = ({
 }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newUrl, setNewUrl] = useState(videoUrl);
+  const [error, setError] = useState('');
 
   const extractVideoId = (url: string) => {
     const patterns = [
@@ -25,6 +27,12 @@ const VideoPlayer = ({
   };
 
   const handleSave = () => {
+    setError('');
+
+    if (!validateYoutubeUrl(newUrl)) {
+      setError('Please enter a valid YouTube video URL');
+      return;
+    }
     const updatedData = {
       url: newUrl,
       savedAt: Date.now(),
@@ -64,7 +72,7 @@ const VideoPlayer = ({
             onChange={(e) => setNewUrl(e.target.value)}
             className="w-full border rounded-lg px-3 py-2"
           />
-
+          {error && <p className="text-red-500 text-sm">{error}</p>}
           <div className="flex gap-3">
             <button
               onClick={handleSave}

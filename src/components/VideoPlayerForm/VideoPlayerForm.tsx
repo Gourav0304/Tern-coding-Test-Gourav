@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TvMinimalPlay, Sparkles } from 'lucide-react';
+import { validateYoutubeUrl } from '../../utils/validateYoutubeUrl';
 
 interface VideoPlayerFormProps {
   onSave: (url: string) => void;
@@ -8,14 +9,6 @@ interface VideoPlayerFormProps {
 const VideoPlayerForm = ({ onSave }: VideoPlayerFormProps) => {
   const [videoUrl, setVideoUrl] = useState('');
   const [error, setError] = useState('');
-
-  const validateYoutubeUrl = (url: string) => {
-    const patterns = [
-      /^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
-      /^(https?:\/\/)?(www\.)?youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/,
-    ];
-    return patterns.some((pattern) => pattern.test(url));
-  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
