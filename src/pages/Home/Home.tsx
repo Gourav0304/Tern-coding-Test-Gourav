@@ -1,7 +1,14 @@
+import VideoPlayerForm from '../../components/VideoPlayerForm/VideoPlayerForm';
+
 export default function Home() {
+  const handleSave = (videoUrl: string) => {
+    console.log('Video URL saved:', videoUrl);
+  };
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold">Home Page</h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/30 flex items-center justify-center p-6">
+      <div className="relative z-10 w-full">
+        <VideoPlayerForm onSave={handleSave} isLoading={false} />
+      </div>
     </div>
   );
 }
