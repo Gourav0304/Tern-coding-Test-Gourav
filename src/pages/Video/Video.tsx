@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import VideoPlayer from '../../components/VideoPlayerForm/VideoPlayer';
 import VideoPlayerForm from '../../components/VideoPlayerForm/VideoPlayerForm';
 
-export default function Video() {
+const Video = () => {
   const stored = localStorage.getItem('videoData');
   const parsed = stored ? JSON.parse(stored) : null;
 
@@ -14,14 +14,13 @@ export default function Video() {
 
     const now = Date.now();
     const elapsedSeconds = Math.floor((now - parsed.savedAt) / 1000);
-
     setStartTime(elapsedSeconds);
   }, []);
 
   if (!videoUrl) {
     return (
       <VideoPlayerForm
-        onSave={(url) => {
+        onSave={(url: string) => {
           const saveData = {
             url,
             savedAt: Date.now(),
@@ -40,4 +39,6 @@ export default function Video() {
       </div>
     </div>
   );
-}
+};
+
+export default Video;

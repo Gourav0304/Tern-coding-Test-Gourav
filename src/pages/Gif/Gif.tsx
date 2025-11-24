@@ -1,7 +1,7 @@
 import { ArrowLeft, Laugh } from 'lucide-react';
 import { useNavigate } from 'react-router';
 
-export default function Gif() {
+const Gif = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -18,9 +18,11 @@ export default function Gif() {
                 <Laugh className="w-8 h-8 text-white" />
               </div>
             </div>
+
             <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-1">
               Time for a Laugh!
             </h1>
+
             <p className="text-gray-500">While you're here, enjoy this gem</p>
           </div>
 
@@ -30,7 +32,7 @@ export default function Gif() {
               alt="Funny cat doing calculations"
               className="w-full h-auto"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
           </div>
 
           <div className="space-y-4">
@@ -50,4 +52,6 @@ export default function Gif() {
       </div>
     </div>
   );
-}
+};
+
+export default Gif;

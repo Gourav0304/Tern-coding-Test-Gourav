@@ -1,7 +1,7 @@
 import { Youtube, Image as ImageIcon, Home as HomeIcon } from 'lucide-react';
 import { Link, Outlet, useLocation } from 'react-router';
 
-export default function Layout() {
+const Layout = () => {
   const location = useLocation();
 
   const navItems = [
@@ -55,4 +55,6 @@ export default function Layout() {
       </main>
     </div>
   );
-}
+};
+
+export default Layout;

@@ -5,7 +5,7 @@ interface VideoPlayerFormProps {
   onSave: (url: string) => void;
 }
 
-export default function VideoPlayerForm({ onSave }: VideoPlayerFormProps) {
+const VideoPlayerForm = ({ onSave }: VideoPlayerFormProps) => {
   const [videoUrl, setVideoUrl] = useState('');
   const [error, setError] = useState('');
 
@@ -42,7 +42,7 @@ export default function VideoPlayerForm({ onSave }: VideoPlayerFormProps) {
             <div className="text-center pb-4 p-6">
               <div className="flex justify-center mb-4">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-xl opacity-50"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-xl opacity-50" />
                   <div className="relative bg-gradient-to-r from-purple-600 to-blue-600 p-4 rounded-full">
                     <Youtube className="w-10 h-10 text-white" />
                   </div>
@@ -91,8 +91,8 @@ export default function VideoPlayerForm({ onSave }: VideoPlayerFormProps) {
                 <button
                   type="submit"
                   className="w-full h-12 bg-gradient-to-r from-purple-600 to-blue-600 
-              hover:from-purple-700 hover:to-blue-700 text-white font-medium 
-              shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
+                    hover:from-purple-700 hover:to-blue-700 text-white font-medium 
+                    shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
                 >
                   Save Video
                 </button>
@@ -103,4 +103,6 @@ export default function VideoPlayerForm({ onSave }: VideoPlayerFormProps) {
       </div>
     </div>
   );
-}
+};
+
+export default VideoPlayerForm;
