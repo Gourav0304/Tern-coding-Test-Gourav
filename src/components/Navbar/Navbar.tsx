@@ -1,4 +1,5 @@
-import { Youtube, Image as ImageIcon, Home as HomeIcon } from 'lucide-react';
+import { TvMinimalPlay, ImageIcon, HomeIcon } from 'lucide-react';
+
 import { Link, useLocation } from 'react-router';
 
 const Navbar = () => {
@@ -6,7 +7,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', icon: HomeIcon, path: '/' },
-    { name: 'Video', icon: Youtube, path: '/video' },
+    { name: 'Video', icon: TvMinimalPlay, path: '/video' },
     { name: 'GIF', icon: ImageIcon, path: '/gif' },
   ];
 
@@ -16,7 +17,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-2 rounded-lg">
-              <Youtube className="w-6 h-6 text-white" />
+              <TvMinimalPlay className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
               VideoPlayer

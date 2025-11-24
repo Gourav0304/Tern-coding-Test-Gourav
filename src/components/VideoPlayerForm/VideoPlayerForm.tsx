@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Youtube, Sparkles } from 'lucide-react';
+import { TvMinimalPlay, Sparkles } from 'lucide-react';
 
 interface VideoPlayerFormProps {
   onSave: (url: string) => void;
@@ -44,7 +44,7 @@ const VideoPlayerForm = ({ onSave }: VideoPlayerFormProps) => {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-xl opacity-50" />
                   <div className="relative bg-gradient-to-r from-purple-600 to-blue-600 p-4 rounded-full">
-                    <Youtube className="w-10 h-10 text-white" />
+                    <TvMinimalPlay className="w-10 h-10 text-white" />
                   </div>
                 </div>
               </div>
