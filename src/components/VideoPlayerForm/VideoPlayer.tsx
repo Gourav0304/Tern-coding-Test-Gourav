@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Edit } from 'lucide-react';
 import { validateYoutubeUrl } from '../../utils/validateYoutubeUrl';
+import { extractVideoId } from '../../utils/extractVideoId';
 
 const VideoPlayer = ({
   videoUrl,
@@ -12,19 +13,6 @@ const VideoPlayer = ({
   const [isEditing, setIsEditing] = useState(false);
   const [newUrl, setNewUrl] = useState(videoUrl);
   const [error, setError] = useState('');
-
-  const extractVideoId = (url: string) => {
-    const patterns = [
-      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
-      /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/,
-    ];
-
-    for (const pattern of patterns) {
-      const match = url.match(pattern);
-      if (match) return match[1];
-    }
-    return null;
-  };
 
   const handleSave = () => {
     setError('');
