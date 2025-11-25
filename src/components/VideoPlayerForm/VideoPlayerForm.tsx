@@ -28,21 +28,21 @@ const VideoPlayerForm = ({ onSave }: VideoPlayerFormProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/30 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 via-purple-50/30 to-blue-50/30 flex items-center justify-center p-6">
       <div className="relative z-10 w-full">
         <div className="w-full max-w-2xl mx-auto">
           <div className="shadow-2xl border-0 bg-white/80 backdrop-blur-sm rounded-xl">
             <div className="text-center pb-4 p-6">
               <div className="flex justify-center mb-4">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-xl opacity-50" />
-                  <div className="relative bg-gradient-to-r from-purple-600 to-blue-600 p-4 rounded-full">
+                  <div className="absolute inset-0 bg-linear-to-r from-purple-600 to-blue-600 rounded-full blur-xl opacity-50" />
+                  <div className="relative bg-linear-to-r from-purple-600 to-blue-600 p-4 rounded-full">
                     <TvMinimalPlay className="w-10 h-10 text-white" />
                   </div>
                 </div>
               </div>
 
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold bg-linear-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 YouTube Video Player
               </h2>
 
@@ -83,7 +83,7 @@ const VideoPlayerForm = ({ onSave }: VideoPlayerFormProps) => {
 
                 <button
                   type="submit"
-                  className="w-full h-12 bg-gradient-to-r from-purple-600 to-blue-600 
+                  className="w-full h-12 bg-linear-to-r from-purple-600 to-blue-600 
                     hover:from-purple-700 hover:to-blue-700 text-white font-medium 
                     shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
                 >

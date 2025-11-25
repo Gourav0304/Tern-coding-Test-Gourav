@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Edit } from 'lucide-react';
 import { validateYoutubeUrl } from '../../utils/validateYoutubeUrl';
 import { extractVideoId } from '../../utils/extractVideoId';
+import { getEmbedUrl } from '../../utils/getEmbedUrl';
 
 const VideoPlayer = ({
   videoUrl,
@@ -40,7 +41,7 @@ const VideoPlayer = ({
     );
   }
 
-  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${startTime}`;
+  const embedUrl = getEmbedUrl(videoId, startTime);
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6">
