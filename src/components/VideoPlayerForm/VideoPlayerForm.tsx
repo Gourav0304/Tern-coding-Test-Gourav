@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { TvMinimalPlay, Sparkles } from 'lucide-react';
 import { validateYoutubeUrl } from '../../utils/validateYoutubeUrl';
 
@@ -10,7 +10,7 @@ const VideoPlayerForm = ({ onSave }: VideoPlayerFormProps) => {
   const [videoUrl, setVideoUrl] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');
 
