@@ -1,8 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
-import Home from './pages/Home/Home';
-import Video from './pages/Video/Video';
-import Gif from './pages/Gif/Gif';
-import Layout from './components/Layout/Layout';
+import { Layout } from '@/components';
+import { Gif, Home, Video } from '@/pages';
 
 export default function App() {
   return (

@@ -1,8 +1,8 @@
 import { ArrowLeft, Laugh } from 'lucide-react';
 import { useNavigate } from 'react-router';
-import { FUNNY_CAT_GIF } from '../../utils/constants';
+import { FUNNY_CAT_GIF } from '@/utils/constants';
 
-const Gif = () => {
+export const Gif = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -54,5 +54,3 @@ const Gif = () => {
     </div>
   );
 };
-
-export default Gif;

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Edit } from 'lucide-react';
-import { validateYoutubeUrl } from '../../utils/validateYoutubeUrl';
-import { extractVideoId } from '../../utils/extractVideoId';
-import { getEmbedUrl } from '../../utils/getEmbedUrl';
+import { validateYoutubeUrl } from '@/utils/validateYoutubeUrl';
+import { extractVideoId } from '@/utils/extractVideoId';
+import { getEmbedUrl } from '@/utils/getEmbedUrl';
 
-const VideoPlayer = ({
+export const VideoPlayer = ({
   videoUrl,
   startTime = 0,
 }: {
@@ -93,5 +93,3 @@ const VideoPlayer = ({
     </div>
   );
 };
-
-export default VideoPlayer;

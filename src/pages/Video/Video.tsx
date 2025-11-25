@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
-import VideoPlayerForm from '../../components/VideoPlayer/VideoPlayerForm';
+import { VideoPlayer, VideoPlayerForm } from '@/components';
 
-const Video = () => {
+export const Video = () => {
   const stored = localStorage.getItem('videoData');
   const parsed = stored ? JSON.parse(stored) : null;
 
@@ -40,5 +39,3 @@ const Video = () => {
     </div>
   );
 };
-
-export default Video;

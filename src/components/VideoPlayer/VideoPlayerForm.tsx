@@ -1,12 +1,12 @@
 import { useState, type FormEvent } from 'react';
 import { TvMinimalPlay, Sparkles } from 'lucide-react';
-import { validateYoutubeUrl } from '../../utils/validateYoutubeUrl';
+import { validateYoutubeUrl } from '@/utils/validateYoutubeUrl';
 
 interface VideoPlayerFormProps {
   onSave: (url: string) => void;
 }
 
-const VideoPlayerForm = ({ onSave }: VideoPlayerFormProps) => {
+export const VideoPlayerForm = ({ onSave }: VideoPlayerFormProps) => {
   const [videoUrl, setVideoUrl] = useState('');
   const [error, setError] = useState('');
 
@@ -97,5 +97,3 @@ const VideoPlayerForm = ({ onSave }: VideoPlayerFormProps) => {
     </div>
   );
 };
-
-export default VideoPlayerForm;

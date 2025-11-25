@@ -2,7 +2,7 @@ import { TvMinimalPlay, ImageIcon, HomeIcon } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
 import clsx from 'clsx';
 
-const Navbar = () => {
+export const Navbar = () => {
   const location = useLocation();
 
   const navItems = [
@@ -53,5 +53,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router';
-import VideoPlayerForm from '../../components/VideoPlayer/VideoPlayerForm';
+import { VideoPlayerForm } from '../../components';
 
-const Home = () => {
+export const Home = () => {
   const navigate = useNavigate();
 
   const handleSave = (videoUrl: string) => {
@@ -16,5 +16,3 @@ const Home = () => {
 
   return <VideoPlayerForm onSave={handleSave} />;
 };
-
-export default Home;
