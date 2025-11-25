@@ -33,7 +33,7 @@ const Video = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50/30 to-blue-50/30 p-6">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 via-purple-50/30 to-blue-50/30 p-6">
       <div className="relative z-10 w-full">
         <VideoPlayer videoUrl={videoUrl} startTime={startTime} />
       </div>
