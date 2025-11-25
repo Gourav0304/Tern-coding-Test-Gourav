@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import VideoPlayerForm from '../../components/VideoPlayerForm/VideoPlayerForm';
+import VideoPlayerForm from '../../components/VideoPlayer/VideoPlayerForm';
 
 const Home = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import VideoPlayer from '../../components/VideoPlayerForm/VideoPlayer';
-import VideoPlayerForm from '../../components/VideoPlayerForm/VideoPlayerForm';
+import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
+import VideoPlayerForm from '../../components/VideoPlayer/VideoPlayerForm';
 
 const Video = () => {
   const stored = localStorage.getItem('videoData');
