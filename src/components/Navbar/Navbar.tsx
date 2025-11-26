@@ -2,14 +2,14 @@ import { TvMinimalPlay, ImageIcon, HomeIcon } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
 import clsx from 'clsx';
 
+const navItems = [
+  { name: 'Home', icon: HomeIcon, path: '/' },
+  { name: 'Video', icon: TvMinimalPlay, path: '/video' },
+  { name: 'GIF', icon: ImageIcon, path: '/gif' },
+];
+
 export const Navbar = () => {
   const location = useLocation();
-
-  const navItems = [
-    { name: 'Home', icon: HomeIcon, path: '/' },
-    { name: 'Video', icon: TvMinimalPlay, path: '/video' },
-    { name: 'GIF', icon: ImageIcon, path: '/gif' },
-  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
@@ -25,14 +25,13 @@ export const Navbar = () => {
           </Link>
 
           <div className="flex items-center gap-2">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = location.pathname === item.path;
+            {navItems.map(({ name, icon: Icon, path }) => {
+              const isActive = location.pathname === path;
 
               return (
                 <Link
-                  key={item.path}
-                  to={item.path}
+                  key={path}
+                  to={path}
                   className={clsx(
                     'flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300',
                     isActive
@@ -41,9 +40,7 @@ export const Navbar = () => {
                   )}
                 >
                   <Icon className="w-4 h-4" />
-                  <span className="font-medium hidden sm:inline">
-                    {item.name}
-                  </span>
+                  <span className="font-medium hidden sm:inline">{name}</span>
                 </Link>
               );
             })}
